@@ -15,7 +15,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.67.0-df2073a1-20230222-221157
+ * IBM OpenAPI SDK Code Generator Version: 3.66.0-d6c2d7e0-20230215-221247
  */
 
 // Package projectv1 : Operations and models for the ProjectV1 service
@@ -30,12 +30,12 @@ import (
 	"time"
 
 	"github.com/IBM/go-sdk-core/v5/core"
-	common "github.com/damianovesperini/platform-services-go-sdk/common"
+	common "github.com/IBM/platform-services-go-sdk/common"
 	"github.com/go-openapi/strfmt"
 )
 
 // ProjectV1 : This document is the **REST API specification** for the Projects Service. The Projects service provides
-// the capability to manage infrastructure as code in IBM Cloud.
+// the capability to manage Infrastructure as Code in IBM Cloud.
 //
 // API Version: 1.0.0
 type ProjectV1 struct {
@@ -43,7 +43,7 @@ type ProjectV1 struct {
 }
 
 // DefaultServiceURL is the default URL to make service requests to.
-const DefaultServiceURL = "https://projects.api.test.cloud.ibm.com"
+const DefaultServiceURL = "https://projects.api.cloud.ibm.com"
 
 // DefaultServiceName is the default key used to find external configuration information.
 const DefaultServiceName = "project"
@@ -304,7 +304,7 @@ func (project *ProjectV1) ListProjectsWithContext(ctx context.Context, listProje
 }
 
 // GetProject : Get project by ID
-// Get a project definition document by the ID.
+// Get a project instance by ID.
 func (project *ProjectV1) GetProject(getProjectOptions *GetProjectOptions) (result *Project, response *core.DetailedResponse, err error) {
 	return project.GetProjectWithContext(context.Background(), getProjectOptions)
 }
@@ -577,7 +577,7 @@ func (project *ProjectV1) CreateConfigWithContext(ctx context.Context, createCon
 }
 
 // ListConfigs : List all project configurations
-// Lists all of the project configurations for a specific project.
+// The collection of configurations that are returned.
 func (project *ProjectV1) ListConfigs(listConfigsOptions *ListConfigsOptions) (result *ProjectConfigCollection, response *core.DetailedResponse, err error) {
 	return project.ListConfigsWithContext(context.Background(), listConfigsOptions)
 }
@@ -595,7 +595,6 @@ func (project *ProjectV1) ListConfigsWithContext(ctx context.Context, listConfig
 
 	pathParamsMap := map[string]string{
 		"id": *listConfigsOptions.ID,
-		"projectId": *listConfigsOptions.ProjectID,
 	}
 
 	builder := core.NewRequestBuilder(core.GET)
@@ -785,7 +784,7 @@ func (project *ProjectV1) UpdateConfigWithContext(ctx context.Context, updateCon
 
 // DeleteConfig : Delete a configuration in a project by ID
 // Delete a configuration in a project. Deleting the configuration will also destroy all the resources deployed by the
-// configuration.
+// configuration if the query parameter destroy is specified.
 func (project *ProjectV1) DeleteConfig(deleteConfigOptions *DeleteConfigOptions) (result *ProjectConfigDelete, response *core.DetailedResponse, err error) {
 	return project.DeleteConfigWithContext(context.Background(), deleteConfigOptions)
 }
@@ -1137,7 +1136,8 @@ func (project *ProjectV1) CheckConfigWithContext(ctx context.Context, checkConfi
 }
 
 // InstallConfig : Deploy a configuration
-// Deploy a project's configuration. It is an asynchronous operation that can be tracked using the project status API.
+// Deploy a project's configuration. It's an asynchronous operation that can be tracked using the get project
+// configuration API with full metadata.
 func (project *ProjectV1) InstallConfig(installConfigOptions *InstallConfigOptions) (result *ProjectConfig, response *core.DetailedResponse, err error) {
 	return project.InstallConfigWithContext(context.Background(), installConfigOptions)
 }
@@ -1203,7 +1203,7 @@ func (project *ProjectV1) InstallConfigWithContext(ctx context.Context, installC
 
 // UninstallConfig : Destroy configuration resources
 // Destroy a project's configuration resources. The operation destroys all the resources that are deployed with the
-// specific configuration. You can track it by using the project status API.
+// specific configuration. You can track it by using the get project configuration API with full metadata.
 func (project *ProjectV1) UninstallConfig(uninstallConfigOptions *UninstallConfigOptions) (response *core.DetailedResponse, err error) {
 	return project.UninstallConfigWithContext(context.Background(), uninstallConfigOptions)
 }
@@ -4051,9 +4051,6 @@ type ListConfigsOptions struct {
 	// The flag to determine if full metadata should be returned.
 	Complete *bool `json:"complete,omitempty"`
 
-	// The project ID.
-	ProjectID *string `json:"projectId,omitempty"`
-
 	// Allows users to set headers on API requests
 	Headers map[string]string
 }
@@ -4088,12 +4085,6 @@ func (_options *ListConfigsOptions) SetVersion(version string) *ListConfigsOptio
 // SetComplete : Allow user to set Complete
 func (_options *ListConfigsOptions) SetComplete(complete bool) *ListConfigsOptions {
 	_options.Complete = core.BoolPtr(complete)
-	return _options
-}
-
-// SetProjectID : Allow user to set ProjectID
-func (_options *ListConfigsOptions) SetProjectID(projectID string) *ListConfigsOptions {
-	_options.ProjectID = core.StringPtr(projectID)
 	return _options
 }
 
@@ -4572,7 +4563,7 @@ type OutputValue struct {
 	Description *string `json:"description,omitempty"`
 
 	// The output value.
-	Value []string `json:"value,omitempty"`
+	Value []interface{} `json:"value,omitempty"`
 }
 
 // UnmarshalOutputValue unmarshals an instance of OutputValue from the specified map of raw messages.

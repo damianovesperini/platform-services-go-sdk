@@ -27,7 +27,7 @@ import (
 	"time"
 
 	"github.com/IBM/go-sdk-core/v5/core"
-	"github.com/damianovesperini/platform-services-go-sdk/projectv1"
+	"github.com/IBM/platform-services-go-sdk/projectv1"
 	"github.com/go-openapi/strfmt"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -269,7 +269,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
+					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
 				}))
 			})
 			It(`Invoke CreateProject successfully with retries`, func() {
@@ -364,7 +364,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
+					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
 				}))
 			})
 			It(`Invoke CreateProject successfully`, func() {
@@ -912,7 +912,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
+					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
 				}))
 			})
 			It(`Invoke GetProject successfully with retries`, func() {
@@ -970,7 +970,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
+					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
 				}))
 			})
 			It(`Invoke GetProject successfully`, func() {
@@ -1158,7 +1158,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
+					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
 				}))
 			})
 			It(`Invoke UpdateProject successfully with retries`, func() {
@@ -1236,7 +1236,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
+					fmt.Fprintf(res, "%s", `{"name": "Name", "description": "Description", "id": "ID", "crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}], "metadata": {"crn": "crn:v1:staging:public:project:global:a/4e1c48fcf8ac33c0a2441e4139f189ae:bf40ad13-b107-446a-8286-c6d576183bb1::", "created_at": "2019-01-01T12:00:00.000Z", "cumulative_needs_attention_view": [{"event": "Event", "event_id": "EventID", "config_id": "ConfigID", "config_version": 13}], "cumulative_needs_attention_view_err": "CumulativeNeedsAttentionViewErr", "location": "Location", "resource_group": "ResourceGroup", "state": "State", "event_notifications_crn": "EventNotificationsCrn"}}`)
 				}))
 			})
 			It(`Invoke UpdateProject successfully`, func() {
@@ -1521,7 +1521,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke CreateConfig successfully with retries`, func() {
@@ -1607,7 +1607,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke CreateConfig successfully`, func() {
@@ -1779,7 +1779,6 @@ var _ = Describe(`ProjectV1`, func() {
 				// Construct an instance of the ListConfigsOptions model
 				listConfigsOptionsModel := new(projectv1.ListConfigsOptions)
 				listConfigsOptionsModel.ID = core.StringPtr("testString")
-				listConfigsOptionsModel.ProjectID = core.StringPtr("testString")
 				listConfigsOptionsModel.Version = core.StringPtr("active")
 				listConfigsOptionsModel.Complete = core.BoolPtr(false)
 				listConfigsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
@@ -1820,7 +1819,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}]}`)
+					fmt.Fprintf(res, "%s", `{"configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}]}`)
 				}))
 			})
 			It(`Invoke ListConfigs successfully with retries`, func() {
@@ -1835,7 +1834,6 @@ var _ = Describe(`ProjectV1`, func() {
 				// Construct an instance of the ListConfigsOptions model
 				listConfigsOptionsModel := new(projectv1.ListConfigsOptions)
 				listConfigsOptionsModel.ID = core.StringPtr("testString")
-				listConfigsOptionsModel.ProjectID = core.StringPtr("testString")
 				listConfigsOptionsModel.Version = core.StringPtr("active")
 				listConfigsOptionsModel.Complete = core.BoolPtr(false)
 				listConfigsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
@@ -1879,7 +1877,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}]}`)
+					fmt.Fprintf(res, "%s", `{"configs": [{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}]}`)
 				}))
 			})
 			It(`Invoke ListConfigs successfully`, func() {
@@ -1899,7 +1897,6 @@ var _ = Describe(`ProjectV1`, func() {
 				// Construct an instance of the ListConfigsOptions model
 				listConfigsOptionsModel := new(projectv1.ListConfigsOptions)
 				listConfigsOptionsModel.ID = core.StringPtr("testString")
-				listConfigsOptionsModel.ProjectID = core.StringPtr("testString")
 				listConfigsOptionsModel.Version = core.StringPtr("active")
 				listConfigsOptionsModel.Complete = core.BoolPtr(false)
 				listConfigsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
@@ -1922,7 +1919,6 @@ var _ = Describe(`ProjectV1`, func() {
 				// Construct an instance of the ListConfigsOptions model
 				listConfigsOptionsModel := new(projectv1.ListConfigsOptions)
 				listConfigsOptionsModel.ID = core.StringPtr("testString")
-				listConfigsOptionsModel.ProjectID = core.StringPtr("testString")
 				listConfigsOptionsModel.Version = core.StringPtr("active")
 				listConfigsOptionsModel.Complete = core.BoolPtr(false)
 				listConfigsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
@@ -1966,7 +1962,6 @@ var _ = Describe(`ProjectV1`, func() {
 				// Construct an instance of the ListConfigsOptions model
 				listConfigsOptionsModel := new(projectv1.ListConfigsOptions)
 				listConfigsOptionsModel.ID = core.StringPtr("testString")
-				listConfigsOptionsModel.ProjectID = core.StringPtr("testString")
 				listConfigsOptionsModel.Version = core.StringPtr("active")
 				listConfigsOptionsModel.Complete = core.BoolPtr(false)
 				listConfigsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
@@ -2053,7 +2048,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke GetConfig successfully with retries`, func() {
@@ -2112,7 +2107,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke GetConfig successfully`, func() {
@@ -2307,7 +2302,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke UpdateConfig successfully with retries`, func() {
@@ -2388,7 +2383,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke UpdateConfig successfully`, func() {
@@ -3047,7 +3042,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke ForceApprove successfully with retries`, func() {
@@ -3121,7 +3116,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke ForceApprove successfully`, func() {
@@ -3309,7 +3304,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke Approve successfully with retries`, func() {
@@ -3383,7 +3378,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke Approve successfully`, func() {
@@ -3562,7 +3557,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(202)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke CheckConfig successfully with retries`, func() {
@@ -3624,7 +3619,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(202)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke CheckConfig successfully`, func() {
@@ -3798,7 +3793,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(202)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke InstallConfig successfully with retries`, func() {
@@ -3855,7 +3850,7 @@ var _ = Describe(`ProjectV1`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(202)
-					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["Value"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
+					fmt.Fprintf(res, "%s", `{"id": "ID", "name": "Name", "labels": ["Labels"], "description": "Description", "locator_id": "LocatorID", "type": "terraform_template", "input": [{"name": "Name", "type": "array", "required": true}], "output": [{"name": "Name", "description": "Description", "value": ["anyValue"]}], "setting": [{"name": "Name", "value": "Value"}]}`)
 				}))
 			})
 			It(`Invoke InstallConfig successfully`, func() {
@@ -8634,13 +8629,11 @@ var _ = Describe(`ProjectV1`, func() {
 				listConfigsOptionsModel.SetID("testString")
 				listConfigsOptionsModel.SetVersion("active")
 				listConfigsOptionsModel.SetComplete(false)
-				listConfigsOptionsModel.SetProjectID("testString")
 				listConfigsOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(listConfigsOptionsModel).ToNot(BeNil())
 				Expect(listConfigsOptionsModel.ID).To(Equal(core.StringPtr("testString")))
 				Expect(listConfigsOptionsModel.Version).To(Equal(core.StringPtr("active")))
 				Expect(listConfigsOptionsModel.Complete).To(Equal(core.BoolPtr(false)))
-				Expect(listConfigsOptionsModel.ProjectID).To(Equal(core.StringPtr("testString")))
 				Expect(listConfigsOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewListProjectsOptions successfully`, func() {
@@ -8745,7 +8738,7 @@ var _ = Describe(`ProjectV1`, func() {
 				outputValueModel := new(projectv1.OutputValue)
 				outputValueModel.Name = core.StringPtr("testString")
 				outputValueModel.Description = core.StringPtr("testString")
-				outputValueModel.Value = []string{"testString"}
+				outputValueModel.Value = []interface{}{"testString"}
 
 				// Construct an instance of the ProjectConfigSettingCollection model
 				projectConfigSettingCollectionModel := new(projectv1.ProjectConfigSettingCollection)
@@ -8847,7 +8840,7 @@ var _ = Describe(`ProjectV1`, func() {
 				outputValueModel := new(projectv1.OutputValue)
 				outputValueModel.Name = core.StringPtr("testString")
 				outputValueModel.Description = core.StringPtr("testString")
-				outputValueModel.Value = []string{"testString"}
+				outputValueModel.Value = []interface{}{"testString"}
 
 				// Construct an instance of the ProjectConfigSettingCollection model
 				projectConfigSettingCollectionModel := new(projectv1.ProjectConfigSettingCollection)
